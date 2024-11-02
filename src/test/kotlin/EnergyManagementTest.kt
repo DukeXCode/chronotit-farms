@@ -6,7 +6,7 @@ class EnergyManagementTest {
     @Test
     fun testAllLimitsToZero() {
         runBlocking {
-            val response = allLimitsToZero()
+            val response = EnergyManagement().allLimitsToZero()
 
             assertEquals("success", response.kind)
         }

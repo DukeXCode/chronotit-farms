@@ -9,7 +9,10 @@ object ClientProvider {
     val client = HttpClient(CIO) {
         expectSuccess = true
         install(ContentNegotiation) {
-            json(Json { ignoreUnknownKeys = true })
+            json(Json {
+                ignoreUnknownKeys = true
+                encodeDefaults = true
+            })
         }
         install(Logging) {
             level = LogLevel.ALL

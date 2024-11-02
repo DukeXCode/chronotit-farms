@@ -5,10 +5,14 @@ fun main() {
         throw IllegalStateException("Env 'VM_IP' is not set")
     }
 
-    // runBlocking {
-    //     Navigation().goTo(0.0, 0.0)
-    //     println(Navigation().get_pos())
-    // }
+    val energyManagement = EnergyManagement()
+    val navigation = Navigation()
+
+    runBlocking {
+        energyManagement.allLimitsToZero()
+        energyManagement.enableThrusters()
+        navigation.goTo(-17937.0, 12727.0)
+    }
 }
 
 object UrlProvider {

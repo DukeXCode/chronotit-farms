@@ -2,4 +2,4 @@ fun main() {
     
 }
 
-val BASE_URL = System.getenv("VM_IP")
+val BASE_URL = "http://${System.getenv("VM_IP")}"

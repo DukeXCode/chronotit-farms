@@ -1,3 +1,4 @@
+import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 
 fun main() {
@@ -8,10 +9,14 @@ fun main() {
     val energyManagement = EnergyManagement()
     val navigation = Navigation()
 
+    val x = -18737.0
+    val y = 12527.0
+
     runBlocking {
         energyManagement.allLimitsToZero()
         energyManagement.enableThrusters()
-        navigation.goTo(-17937.0, 12727.0)
+        navigation.goTo(x, y)
+        navigation.awaitCoords(x, y)
     }
 }
 

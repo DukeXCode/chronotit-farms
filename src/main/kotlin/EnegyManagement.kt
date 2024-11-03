@@ -23,13 +23,13 @@ class EnergyManagement {
     }
 
     private suspend fun sendLimitsRequestsUntilSuccess(port: Int = ports[0], body: LimitsBody): LimitsResponse {
-        val response: LimitsResponse = sendLimitsRequest(ports[0], body)
-        if (response.kind == "success") {
-            return response
+        val response: LimitsResponse = sendLimitsRequest(port, body)
+        return if (response.kind == "success") {
+            response
         } else {
+            print("next port: " + ports.stream().filter { it != port }.toList()[0])
             sendLimitsRequestsUntilSuccess(ports.stream().filter { it != port }.toList()[0], body)
         }
-        throw IllegalStateException("Should never happen")
     }
 
     private suspend fun sendLimitsRequest(port: Int, body: LimitsBody): LimitsResponse {

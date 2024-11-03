@@ -4,6 +4,8 @@ import io.ktor.http.*
 import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 
+private const val CARGO_BOT_DELAY: Long = 1000
+
 class Storage {
     suspend fun moveDownByPriority() {
         val hold = getHold()
@@ -12,7 +14,7 @@ class Storage {
             for (col in 0..11) {
                 if (hold[row][col] != null && hold[row + 1][col] == null) {
                     swap(CargoPosition(col, row), CargoPosition(col, row + 1))
-                    delay(1000)
+                    delay(CARGO_BOT_DELAY)
                     moveDownByPriority()
                 }
             }

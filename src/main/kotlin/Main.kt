@@ -1,3 +1,4 @@
+import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 
 fun main() {

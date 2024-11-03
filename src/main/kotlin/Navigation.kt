@@ -1,7 +1,6 @@
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.http.*
-import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 
 class Navigation {

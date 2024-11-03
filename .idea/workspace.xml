@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e109e9-f57e-4698-a48f-8dce366534b5" name="Changes" comment="fix merge">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Storage.kt" afterDir="false" />
+    <list default="true" id="f1e109e9-f57e-4698-a48f-8dce366534b5" name="Changes" comment="fix request issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Laser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Laser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Navigation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Navigation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Storage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Storage.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +151,7 @@
       <workItem from="1730383084262" duration="1705000" />
       <workItem from="1730546684589" duration="2264000" />
       <workItem from="1730550655421" duration="11589000" />
-      <workItem from="1730636573258" duration="3737000" />
+      <workItem from="1730636573258" duration="5768000" />
     </task>
     <task id="LOCAL-00001" summary="add serialization">
       <option name="closed" value="true" />
@@ -251,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730639286781</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix request issues">
+      <option name="closed" value="true" />
+      <created>1730640512920</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730640512920</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +285,7 @@
     <MESSAGE value="fix some issues" />
     <MESSAGE value="implement laser" />
     <MESSAGE value="fix merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix merge" />
+    <MESSAGE value="fix request issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix request issues" />
   </component>
 </project>

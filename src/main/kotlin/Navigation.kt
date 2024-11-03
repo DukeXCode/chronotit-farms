@@ -1,6 +1,7 @@
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.http.*
+import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 
 class Navigation {
@@ -17,6 +18,17 @@ class Navigation {
         } catch (e: Exception) {
             println("Request failed: ${e.message}")
             throw e
+        }
+    }
+
+    suspend fun awaitCoords(x: Double, y: Double, tolerance: Double = 200.0) {
+        var atCoords = false
+        while (!atCoords) {
+            val response = get_pos()
+            if (response.pos.x - x <= tolerance && response.pos.y - y <= tolerance) {
+                atCoords = true
+            }
+            delay(3000)
         }
     }
 }

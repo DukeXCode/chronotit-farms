@@ -5,7 +5,7 @@ import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 
 class Navigation {
-    suspend fun get_pos(): GetPosResponse {
+    suspend fun getPos(): GetPosResponse {
         return ClientProvider.client.get("${UrlProvider.baseUrl}:2010/pos").body<GetPosResponse>()
     }
 
@@ -24,7 +24,7 @@ class Navigation {
     suspend fun awaitCoords(x: Double, y: Double, tolerance: Double = 200.0) {
         var atCoords = false
         while (!atCoords) {
-            val response = get_pos()
+            val response = getPos()
             if (response.pos.x - x <= tolerance && response.pos.y - y <= tolerance) {
                 atCoords = true
             }
@@ -35,7 +35,6 @@ class Navigation {
 
 @Serializable
 data class Position(val x: Double, val y: Double)
-
 
 @Serializable
 data class GetPosResponse(val kind: String, val pos: Position)

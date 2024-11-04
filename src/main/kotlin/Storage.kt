@@ -7,22 +7,31 @@ import kotlinx.serialization.Serializable
 private const val CARGO_BOT_DELAY: Long = 1000
 
 class Storage {
-    suspend fun moveDownByPriority() {
-        val hold = getHold()
+    suspend fun moveDownByPriorityForever() {
+        while (true) {
+            val hold = getHold()
 
-        for (row in 0..10) {
-            for (col in 0..11) {
-                if (hold[row][col] != null && hold[row + 1][col] == null) {
-                    swap(CargoPosition(col, row), CargoPosition(col, row + 1))
-                    delay(CARGO_BOT_DELAY)
-                    moveDownByPriority()
+            for (row in 0..10) {
+                for (col in 0..11) {
+                    if (hold[row][col] != null && hold[row + 1][col] == null) {
+                        swap(CargoPosition(col, row), CargoPosition(col, row + 1))
+                        delay(CARGO_BOT_DELAY)
+                        moveDownByPriorityForever()
+                    }
                 }
             }
         }
     }
 
-    suspend fun getFreeSpace(): Int {
+    private suspend fun getFreeSpace(): Int {
         return ClientProvider.client.get("${UrlProvider.baseUrl}:2012/hold").body<HoldResponse>().hold_free
+    }
+
+    suspend fun awaitFullStorage() {
+        do {
+            delay(5_000)
+            val freeStorage = getFreeSpace()
+        } while (freeStorage > 0)
     }
 
     private suspend fun swap(a: CargoPosition, b: CargoPosition) {

@@ -1,5 +1,6 @@
 import io.ktor.client.request.*
 import io.ktor.http.*
+import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 
 class Laser {
@@ -7,6 +8,13 @@ class Laser {
         ClientProvider.client.put("${UrlProvider.baseUrl}:2018/angle") {
             contentType(ContentType.Application.Json)
             setBody(AngleBody(angle))
+        }
+    }
+
+    suspend fun activateForever() {
+        while (true) {
+            activate()
+            delay(10_000)
         }
     }
 

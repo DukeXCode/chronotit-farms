@@ -1,3 +1,4 @@
+import io.ktor.client.plugins.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import kotlinx.coroutines.delay
@@ -19,7 +20,11 @@ class Laser {
     }
 
     suspend fun activate() {
-        ClientProvider.client.post("${UrlProvider.baseUrl}:2018/activate")
+        try {
+            ClientProvider.client.post("${UrlProvider.baseUrl}:2018/activate")
+        } catch (e: ServerResponseException) {
+            println("Activate laser request failed")
+        }
     }
 }
 

@@ -1,4 +1,5 @@
 import io.ktor.client.call.*
+import io.ktor.client.plugins.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import kotlinx.coroutines.delay
@@ -14,7 +15,11 @@ class Storage {
             for (row in 0..10) {
                 for (col in 0..11) {
                     if (hold[row][col] != null && hold[row + 1][col] == null) {
-                        swap(CargoPosition(col, row), CargoPosition(col, row + 1))
+                        try {
+                            swap(CargoPosition(col, row), CargoPosition(col, row + 1))
+                        } catch (e: ServerResponseException) {
+                            println("Swap request failed")
+                        }
                         delay(CARGO_BOT_DELAY)
                         moveDownByPriorityForever()
                     }

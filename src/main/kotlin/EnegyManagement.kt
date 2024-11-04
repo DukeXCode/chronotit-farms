@@ -14,7 +14,7 @@ class EnergyManagement {
             thruster_front_right = 1.0,
             thruster_bottom_left = 1.0,
             thruster_bottom_right = 1.0,
-            sensor_atmoic_field = 1.0,
+            sensor_void_energy = 1.0,
             matter_stablizer = 1.0
         )
         sendLimitsRequestsUntilSuccess(body = body)

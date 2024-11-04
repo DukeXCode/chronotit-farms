@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e109e9-f57e-4698-a48f-8dce366534b5" name="Changes" comment="always keep matter-stabilizer activated">
+    <list default="true" id="f1e109e9-f57e-4698-a48f-8dce366534b5" name="Changes" comment="fix hold free">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/EnegyManagement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/EnegyManagement.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Laser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Laser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Storage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Storage.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +154,7 @@
       <workItem from="1730546684589" duration="2264000" />
       <workItem from="1730550655421" duration="11589000" />
       <workItem from="1730636573258" duration="7061000" />
-      <workItem from="1730740396141" duration="4610000" />
+      <workItem from="1730740396141" duration="5061000" />
     </task>
     <task id="LOCAL-00001" summary="add serialization">
       <option name="closed" value="true" />
@@ -321,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730743450080</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix hold free">
+      <option name="closed" value="true" />
+      <created>1730746317155</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730746317155</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +367,7 @@
     <MESSAGE value="set angle before mining" />
     <MESSAGE value="add energy management" />
     <MESSAGE value="always keep matter-stabilizer activated" />
-    <option name="LAST_COMMIT_MESSAGE" value="always keep matter-stabilizer activated" />
+    <MESSAGE value="fix hold free" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix hold free" />
   </component>
 </project>

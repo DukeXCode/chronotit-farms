@@ -26,7 +26,16 @@ suspend fun runFarm() = coroutineScope {
     launch { navigation.goTo(CHRON_X, CHRON_Y) }.join()
     launch { navigation.awaitCoords(CHRON_X, CHRON_Y) }.join()
 
-    launch { energyManagement.set(LimitsBody(laser = 1.0, cargo_bot = 1.0)) }.join()
+    launch {
+        energyManagement.set(
+            LimitsBody(
+                laser = 1.0,
+                cargo_bot = 1.0,
+                sensor_atmoic_field = 1.0,
+                matter_stablizer = 1.0
+            )
+        )
+    }.join()
 
     launch { laser.setAngle(50) }.join()
     val laserJob = launch { laser.activateForever() }

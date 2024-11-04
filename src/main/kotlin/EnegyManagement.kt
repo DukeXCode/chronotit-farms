@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 class EnergyManagement {
     private val ports = listOf(2032, 2033)
 
-    public suspend fun enableThrusters() {
+    suspend fun enableThrusters() {
         val body = LimitsBody(
             thruster_back = 1.0,
             thruster_front = 1.0,
@@ -14,6 +14,8 @@ class EnergyManagement {
             thruster_front_right = 1.0,
             thruster_bottom_left = 1.0,
             thruster_bottom_right = 1.0,
+            sensor_atmoic_field = 1.0,
+            matter_stablizer = 1.0
         )
         sendLimitsRequestsUntilSuccess(body = body)
     }

@@ -16,13 +16,17 @@ fun main() {
 }
 
 suspend fun runFarm() = coroutineScope {
-    val energyManagement = EnergyManagement() // TODO: Add energy management
+    val energyManagement = EnergyManagement()
     val navigation = Navigation()
     val laser = Laser()
     val storage = Storage()
 
+    launch { energyManagement.enableThrusters() }.join()
+
     launch { navigation.goTo(CHRON_X, CHRON_Y) }.join()
     launch { navigation.awaitCoords(CHRON_X, CHRON_Y) }.join()
+
+    launch { energyManagement.set(LimitsBody(laser = 1.0, cargo_bot = 1.0)) }.join()
 
     launch { laser.setAngle(50) }.join()
     val laserJob = launch { laser.activateForever() }
@@ -30,6 +34,8 @@ suspend fun runFarm() = coroutineScope {
     launch { storage.awaitFullStorage() }.join()
     laserJob.cancel()
     storageJob.cancel()
+
+    launch { energyManagement.enableThrusters() }.join()
 
     launch { navigation.goTo(ARAK_X, ARAK_Y) }.join()
 }

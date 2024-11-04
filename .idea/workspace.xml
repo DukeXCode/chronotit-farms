@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e109e9-f57e-4698-a48f-8dce366534b5" name="Changes" comment="implement full process (without energy management)">
+    <list default="true" id="f1e109e9-f57e-4698-a48f-8dce366534b5" name="Changes" comment="set angle before mining">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/EnegyManagement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/EnegyManagement.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +151,7 @@
       <workItem from="1730546684589" duration="2264000" />
       <workItem from="1730550655421" duration="11589000" />
       <workItem from="1730636573258" duration="7061000" />
-      <workItem from="1730740396141" duration="1912000" />
+      <workItem from="1730740396141" duration="2360000" />
     </task>
     <task id="LOCAL-00001" summary="add serialization">
       <option name="closed" value="true" />
@@ -280,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730742211493</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="set angle before mining">
+      <option name="closed" value="true" />
+      <created>1730742339974</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730742339974</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +321,7 @@
     <MESSAGE value="implement storage" />
     <MESSAGE value="extract delay to constant" />
     <MESSAGE value="implement full process (without energy management)" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement full process (without energy management)" />
+    <MESSAGE value="set angle before mining" />
+    <option name="LAST_COMMIT_MESSAGE" value="set angle before mining" />
   </component>
 </project>

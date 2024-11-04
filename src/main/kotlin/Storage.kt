@@ -24,7 +24,7 @@ class Storage {
     }
 
     private suspend fun getFreeSpace(): Int {
-        return ClientProvider.client.get("${UrlProvider.baseUrl}:2012/hold").body<HoldResponse>().hold_free
+        return ClientProvider.client.get("${UrlProvider.baseUrl}:2012/hold").body<HoldResponse>().hold.hold_free
     }
 
     suspend fun awaitFullStorage() {
@@ -56,4 +56,7 @@ data class CargoPosition(val x: Int, val y: Int)
 data class StructureResponse(val hold: List<List<String?>>)
 
 @Serializable
-data class HoldResponse(val hold_free: Int)
+data class HoldResponse(val hold: Hold)
+
+@Serializable
+data class Hold(val hold_free: Int)

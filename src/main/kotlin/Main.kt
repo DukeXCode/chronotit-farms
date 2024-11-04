@@ -24,6 +24,7 @@ suspend fun runFarm() = coroutineScope {
     launch { navigation.goTo(CHRON_X, CHRON_Y) }.join()
     launch { navigation.awaitCoords(CHRON_X, CHRON_Y) }.join()
 
+    launch { laser.setAngle(50) }.join()
     val laserJob = launch { laser.activateForever() }
     val storageJob = launch { storage.moveDownByPriorityForever() }
     launch { storage.awaitFullStorage() }.join()

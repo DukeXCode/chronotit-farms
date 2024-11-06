@@ -1,3 +1,5 @@
+package ch.dukex.chronotit_farm
+
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.http.*
@@ -37,7 +39,10 @@ class Navigation {
 data class Position(val x: Double, val y: Double)
 
 @Serializable
-data class GetPosResponse(val kind: String, val pos: Position)
+data class GetPosResponse(val kind: String, val pos: PositionResponse)
 
 @Serializable
 data class GoToBody(val target: Position)
+
+@Serializable
+data class PositionResponse(val x: Double, val y: Double, val angle: Double)

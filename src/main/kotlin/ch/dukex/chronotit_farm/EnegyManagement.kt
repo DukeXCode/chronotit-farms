@@ -1,3 +1,5 @@
+package ch.dukex.chronotit_farm
+
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.http.*
@@ -15,7 +17,7 @@ class EnergyManagement {
             thruster_bottom_left = 1.0,
             thruster_bottom_right = 1.0,
             sensor_void_energy = 1.0,
-            matter_stablizer = 1.0
+            matter_stabilizer = 1.0
         )
         sendLimitsRequestsUntilSuccess(body = body)
     }
@@ -57,7 +59,7 @@ data class LimitsBody(
     val sensor_void_energy: Double = 0.0,
     val shield_generator: Double = 0.0,
     val sensor_atmoic_field: Double = 0.0,
-    val matter_stablizer: Double = 0.0,
+    val matter_stabilizer: Double = 0.0,
     val analyser_alpha: Double = 0.0,
 )
 

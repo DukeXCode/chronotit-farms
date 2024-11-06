@@ -1,9 +1,14 @@
+package ch.dukex.chronotit_farm
+
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-private const val CHRON_X = -18737.0
-private const val CHRON_Y = 12527.0
+private const val CHRON_PARK_X = -18737.0
+private const val CHRON_PARK_Y = 12527.0
+private const val CHRON_X = -18937.0
+private const val CHRON_Y = 12727.0
 private const val ARAK_X = 0.0
 private const val ARAK_Y = 0.0
 
@@ -23,8 +28,8 @@ suspend fun runFarm() = coroutineScope {
 
     launch { energyManagement.enableThrusters() }.join()
 
-    launch { navigation.goTo(CHRON_X, CHRON_Y) }.join()
-    launch { navigation.awaitCoords(CHRON_X, CHRON_Y) }.join()
+    launch { navigation.goTo(CHRON_PARK_X, CHRON_PARK_Y) }.join()
+    launch { navigation.awaitCoords(CHRON_PARK_X, CHRON_PARK_Y) }.join()
 
     launch {
         energyManagement.set(
@@ -32,12 +37,12 @@ suspend fun runFarm() = coroutineScope {
                 laser = 1.0,
                 cargo_bot = 1.0,
                 sensor_void_energy = 1.0,
-                matter_stablizer = 1.0
+                matter_stabilizer = 1.0
             )
         )
     }.join()
 
-    launch { laser.setAngle(310) }.join()
+    launch { delay(15_000); laser.aimLaserAt(CHRON_X, CHRON_Y) }.join()
     val laserJob = launch { laser.activateForever() }
     val storageJob = launch { storage.moveDownByPriorityForever() }
     launch { storage.awaitFullStorage() }.join()

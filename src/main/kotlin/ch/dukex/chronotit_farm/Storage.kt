@@ -1,3 +1,5 @@
+package ch.dukex.chronotit_farm
+
 import io.ktor.client.call.*
 import io.ktor.client.plugins.*
 import io.ktor.client.request.*

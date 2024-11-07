@@ -9,8 +9,8 @@ private const val CHRON_PARK_X = -18737.0
 private const val CHRON_PARK_Y = 12527.0
 private const val CHRON_X = -18937.0
 private const val CHRON_Y = 12727.0
-private const val ARAK_X = 0.0
-private const val ARAK_Y = 0.0
+private const val ARAK_X = 2490.0
+private const val ARAK_Y = 4368.0
 
 fun main() {
     if (System.getenv("VM_IP").isNullOrEmpty()) {
